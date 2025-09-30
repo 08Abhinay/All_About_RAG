@@ -3,3 +3,4 @@
 Langchain/.venv/
 .env
 Langchain/.env
+google-cloud-sdk/
