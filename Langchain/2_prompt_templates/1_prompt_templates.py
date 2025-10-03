@@ -21,6 +21,7 @@ prompt = prompt_template.invoke({
 
 result = llm.invoke(prompt)
 print(result.content)   
+print(result)
 
 print("---------------------------------------------------")
 
@@ -29,9 +30,13 @@ messages = [
     ("human", "Hi! I'm {name}. Can you help me make friends?"),
 ]
 chat_prompt = ChatPromptTemplate.from_messages(messages)
+# print(chat_prompt)
 prompt_2 = chat_prompt.invoke({
     "small_talk": "small talk",
     "name": "Alice"
 })
 result = llm.invoke(prompt_2)
-print(result.content)   
+# print(result.content)   
+# print(result)
+for msg in prompt_2.to_messages():
+    print(msg.type, msg.content)
